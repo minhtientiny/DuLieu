@@ -193,6 +193,16 @@ function MT:Window(hub, the_game_name, main_color)
 	TrueGame.TextWrapped = true
 	TrueGame.TextXAlignment = Enum.TextXAlignment.Left
 	
+	local NewDropShadow = Instance.new("ImageLabel")
+	NewDropShadow.Name = "DropShadow"
+	NewDropShadow.BackgroundTransparency = 1
+	NewDropShadow.Image = "rbxassetid://"
+	NewDropShadow.ImageTransparency = 0.3
+	NewDropShadow.ZIndex = -1
+	NewDropShadow.Position = UDim2.new(-0.0343199335, 0, 1.29166663, 0)
+	NewDropShadow.Size = UDim2.new(0, 495, 0, 286)
+	NewDropShadow.Parent = Top_Bar
+	
 	BlackBackground.Name = "BlackBackground"
 	BlackBackground.Parent = Top_Bar
 	BlackBackground.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
