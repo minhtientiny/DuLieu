@@ -128,7 +128,7 @@ local function ripple(button, x, y)
 end
 
 
-function MT:Window(hub, the_game_name, main_color)
+function mt:Window(hub, the_game_name, main_color)
 	local openned = true
 	local openning = false
 	
