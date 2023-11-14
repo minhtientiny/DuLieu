@@ -1,34 +1,3 @@
---[[
------------------------------------------------------
-local lib = loadstring(game:HttpGet("link", true))()
-local win = lib:Window("Hub Name","Game Name",Color3.new(0.333333, 0.666667, 1))
-local tab = win:Tab("Tab Name")
-local label = tab:Label("Label", properties) --properties: {["Visible"] = flase}
-label:NewLabel("New Text", properties)
-tab:Line()
-tab:Button("Button", function()
-	print("clicked")
-end)
-local toggle = tab:Toggle("Toggle", false, function(val)
-	print(val)
-    lib:Nof("notifi", 3)
-end)
-toggle:NewText("New Toggle")
-toggle:NewState(true)
-local slider = tab:Slider("Slider",1,100,30,function(val)
-	print(val)
-end)
-local drop = tab:Dropdown("Drop New", {"a", 1, 5466}, function(val)
-	print(val)
-end)
-drop:NewText("Drop New 2")
-drop:NewDrop({1,'asdiowna',"aweqq"})
-local txtbox = tab:Textbox("Textbox","write here",function(val)
-	print(val)
-end)
-lib:Nof("notifi",3)
-]]
-
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 
@@ -54,7 +23,7 @@ Circle.ImageTransparency = 0.5
 function mt:DraggingEnabled(frame, parent)
 	parent = parent or frame
 	-- stolen from wally or kiriot, kek
-	--[[
+
 	local dragging = false
 	local dragInput, mousePos, framePos
 
@@ -83,7 +52,7 @@ function mt:DraggingEnabled(frame, parent)
 			parent.Position  = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
 		end
 	end)
-	]]
+
 	
 	local gui = parent
 	local dragging
@@ -96,7 +65,7 @@ function mt:DraggingEnabled(frame, parent)
 		game:GetService("TweenService"):Create(gui,TweenInfo.new(0.25), {
 			Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
 		}):Play()
-		--gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
 	end
 
 	gui.InputBegan:Connect(function(input)
@@ -159,7 +128,7 @@ local function ripple(button, x, y)
 end
 
 
-function mt:Window(hub, the_game_name, main_color)
+function MT:Window(hub, the_game_name, main_color)
 	local openned = true
 	local openning = false
 	
@@ -223,16 +192,6 @@ function mt:Window(hub, the_game_name, main_color)
 	TrueGame.TextStrokeTransparency = 0.100
 	TrueGame.TextWrapped = true
 	TrueGame.TextXAlignment = Enum.TextXAlignment.Left
-	
-	local NewDropShadow = Instance.new("ImageLabel")
-	NewDropShadow.Name = "DropShadow"
-	NewDropShadow.BackgroundTransparency = 1
-	NewDropShadow.Image = "rbxassetid://297774371"
-	NewDropShadow.ImageTransparency = 0.3
-	NewDropShadow.ZIndex = -1
-	NewDropShadow.Position = UDim2.new(-0.0343199335, 0, 1.29166663, 0)
-	NewDropShadow.Size = UDim2.new(0, 495, 0, 286)
-	NewDropShadow.Parent = Top_Bar
 	
 	BlackBackground.Name = "BlackBackground"
 	BlackBackground.Parent = Top_Bar
