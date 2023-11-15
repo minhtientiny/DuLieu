@@ -1,4 +1,4 @@
-repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+
 function YtPr()
 local function RainbowText(text)
 		spawn(function()
