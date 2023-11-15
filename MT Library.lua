@@ -1,5 +1,5 @@
 repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
-function YtPr()
+
 local function RainbowText(text)
 		spawn(function()
 			local add = 10
@@ -54,7 +54,8 @@ local function RainbowText(text)
 				end
 			end
 		end)
-		
+
+function YtPr()
 	local YoutubeGui = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
@@ -125,7 +126,9 @@ local function RainbowText(text)
 		game.Debris:AddItem(YoutubeGui,0)
 	end)
 end
+
 YtPr()
+
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 
