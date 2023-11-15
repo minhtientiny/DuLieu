@@ -20,6 +20,62 @@ Circle.BackgroundTransparency = 1
 Circle.Image = "rbxassetid://266543268"
 Circle.ImageTransparency = 0.5
 
+local function RainbowText(text)
+		spawn(function()
+			local add = 10
+			wait(1)
+			local k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(k/255,0/255,0/255)
+				k = k + add
+				wait()
+			end
+			while true do
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(255/255,k/255,0/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(255/255 - k/255,255/255,0/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(0/255,255/255,k/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(0/255,255/255 - k/255,255/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(k/255,0/255,255/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(255/255,0/255,255/255 - k/255)
+					k = k + add
+					wait()
+				end
+				while k <= 255 do
+					text.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
+					k = k + add
+					wait()
+				end
+			end
+		end)
+	end
+	
 function mt:DraggingEnabled(frame, parent)
 	parent = parent or frame
 	-- stolen from wally or kiriot, kek
@@ -177,6 +233,8 @@ function mt:Window(hub, the_game_name, main_color)
 	Top_Bar.ZIndex = 2
 	mt:DraggingEnabled(Top_Bar)
 	
+	RainbowText(Top_Bar)
+	
 	local TrueGame = Instance.new("TextLabel")
 	TrueGame.Name = "TrueGame"
 	TrueGame.Parent = Top_Bar
@@ -195,15 +253,6 @@ function mt:Window(hub, the_game_name, main_color)
 	TrueGame.TextWrapped = true
 	TrueGame.TextXAlignment = Enum.TextXAlignment.Left
 	
-	UIStroke.Color = Color3.fromRGB(255, 255, 255)
-    UIStroke.Thickness = 1.5
-    UIStroke.Parent = TrueGame
-    UIGradient.Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(15.000000055879354, 255, 255)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(207.00000286102295, 62.00000010430813, 255))
-     }
-    UIGradient.Parent = TrueGame
-    
 	local NewDropShadow = Instance.new("ImageLabel")
 	NewDropShadow.Name = "DropShadow"
 	NewDropShadow.BackgroundTransparency = 1
@@ -310,6 +359,15 @@ function mt:Window(hub, the_game_name, main_color)
 	GameName.TextSize = 14.000
 	GameName.TextStrokeTransparency = 0.100
 	GameName.TextWrapped = true
+	
+	UIStroke.Color = Color3.fromRGB(255, 255, 255)
+    UIStroke.Thickness = 1.5
+    UIStroke.Parent = GameName
+    UIGradient.Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(15.000000055879354, 255, 255)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(207.00000286102295, 62.00000010430813, 255))
+     }
+    UIGradient.Parent = GameName
 
 	RightTab.Name = "RightTab"
 	RightTab.Parent = BlackBackground
@@ -602,6 +660,7 @@ function mt:Window(hub, the_game_name, main_color)
 			ButtenTemp.BorderColor3 = Color3.fromRGB(27, 42, 53)
 			ButtenTemp.BorderSizePixel = 0
 			ButtenTemp.Size = UDim2.new(0, 307, 0, 27)
+			RainbowText(ButtenTemp)
 
 			ClickMe.Name = "ClickMe"
 			ClickMe.Parent = ButtenTemp
