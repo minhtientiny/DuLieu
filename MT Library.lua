@@ -20,7 +20,7 @@ Circle.BackgroundTransparency = 1
 Circle.Image = "rbxassetid://266543268"
 Circle.ImageTransparency = 0.5
 
-local function RainbowText(text)
+function RainbowText(text)
 		spawn(function()
 			local add = 10
 			wait(1)
@@ -660,7 +660,6 @@ function mt:Window(hub, the_game_name, main_color)
 			ButtenTemp.BorderColor3 = Color3.fromRGB(27, 42, 53)
 			ButtenTemp.BorderSizePixel = 0
 			ButtenTemp.Size = UDim2.new(0, 307, 0, 27)
-			RainbowText(ButtenTemp)
 
 			ClickMe.Name = "ClickMe"
 			ClickMe.Parent = ButtenTemp
