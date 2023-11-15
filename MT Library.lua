@@ -160,6 +160,8 @@ function mt:Window(hub, the_game_name, main_color)
 	local UICornerx = Instance.new("UICorner")
 	local FastLoadText = Instance.new("TextLabel")
 	local UICornerd = Instance.new("UICorner")
+	local UIGradient = Instance.new("UIGradient")
+    local UIStroke = Instance.new("UIStroke")
 
 
 	DevGui.Name = "MT_Hub"
@@ -193,6 +195,15 @@ function mt:Window(hub, the_game_name, main_color)
 	TrueGame.TextWrapped = true
 	TrueGame.TextXAlignment = Enum.TextXAlignment.Left
 	
+	UIStroke.Color = Color3.fromRGB(255, 255, 255)
+    UIStroke.Thickness = 1.5
+    UIStroke.Parent = TrueGame
+    UIGradient.Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(15.000000055879354, 255, 255)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(207.00000286102295, 62.00000010430813, 255))
+     }
+    UIGradient.Parent = TrueGame
+    
 	local NewDropShadow = Instance.new("ImageLabel")
 	NewDropShadow.Name = "DropShadow"
 	NewDropShadow.BackgroundTransparency = 1
