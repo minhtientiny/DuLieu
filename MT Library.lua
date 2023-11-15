@@ -1,4 +1,4 @@
-
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 function YtPr()
 local function RainbowText(text)
 		spawn(function()
@@ -125,7 +125,7 @@ local function RainbowText(text)
 		game.Debris:AddItem(YoutubeGui,0)
 	end)
 end
-
+YtPr()
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 
