@@ -1,26 +1,6 @@
-local TweenService = game:GetService("TweenService")
-local UserInputService = game:GetService("UserInputService")
-
-local MT_Video_Display = "false"
-local MT_Video_Id = "0"
-local MT_Tog_Fast = "true"
-
-local mt = {}
-local tween = game:GetService("TweenService")
-local tweeninfo = TweenInfo.new
-local input = game:GetService("UserInputService")
-local run = game:GetService("RunService")
-local plr = game.Players.LocalPlayer
-local mouse = plr:GetMouse()
-
-local Circle = Instance.new("ImageLabel")
-Circle.Name = "Circle"
-Circle.BackgroundColor3 = Color3.new(1, 1, 1)
-Circle.BackgroundTransparency = 1
-Circle.Image = "rbxassetid://266543268"
-Circle.ImageTransparency = 0.5
-
-function RainbowText(text)
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+function YtPr()
+local function RainbowText(text)
 		spawn(function()
 			local add = 10
 			wait(1)
@@ -74,7 +54,99 @@ function RainbowText(text)
 				end
 			end
 		end)
-	end
+		
+	local YoutubeGui = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local ImageLabel = Instance.new("ImageLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local TextLabel = Instance.new("TextLabel")
+	local TextButton = Instance.new("TextButton")
+	local UICorner_3 = Instance.new("UICorner")
+
+	MakeDraggable(Frame,Frame)
+
+	YoutubeGui.Name = "YoutubeGui"
+	YoutubeGui.Parent = game.CoreGui
+	YoutubeGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = YoutubeGui
+	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame.Position = UDim2.new(0.0937950909, 0, 0.497589529, 0)
+	Frame.Size = UDim2.new(0.259740233, 0, 0.172176316, 0)
+
+	UICorner.Parent = Frame
+
+	ImageLabel.Parent = Frame
+	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel.Position = UDim2.new(0.057500001, 0, 0.0700000003, 0)
+	ImageLabel.Size = UDim2.new(0.295138925, 0, 0.850000024, 0)
+	ImageLabel.Image = "http://www.roblox.com/asset/?id=12130059538"
+
+	UICorner_2.CornerRadius = UDim.new(0, 60)
+	UICorner_2.Parent = ImageLabel
+
+	TextLabel.Parent = Frame
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.BorderSizePixel = 0
+	TextLabel.Position = UDim2.new(0.401250005, 0, 0.169999987, 0)
+	TextLabel.Size = UDim2.new(0.534722269, 0, 0.310000002, 0)
+	TextLabel.Font = Enum.Font.Highway
+	TextLabel.Text = " @imtienguyenz"
+	TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+	TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+	TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+	RainbowText(TextLabel)
+
+	TextButton.Parent = Frame
+	TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	TextButton.Position = UDim2.new(0.401250005, 0, 0.479999989, 0)
+	TextButton.Size = UDim2.new(0.534722269, 0, 0.349999994, 0)
+	TextButton.Font = Enum.Font.SourceSans
+	TextButton.Text = "Subcribe"
+	TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton.TextScaled = true
+	TextButton.TextSize = 14.000
+	TextButton.TextWrapped = true
+
+	UICorner_3.Parent = TextButton
+
+	local uistroke = Instance.new("UIStroke",ImageLabel)
+	uistroke.Color =Color3.fromRGB(255, 0, 0)
+	uistroke.Thickness = 3
+
+	game.Debris:AddItem(YoutubeGui,30)
+
+	TextButton.MouseButton1Click:Connect(function()
+		game.Debris:AddItem(YoutubeGui,0)
+	end)
+end
+
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+
+local MT_Video_Display = "false"
+local MT_Video_Id = "0"
+local MT_Tog_Fast = "true"
+
+local mt = {}
+local tween = game:GetService("TweenService")
+local tweeninfo = TweenInfo.new
+local input = game:GetService("UserInputService")
+local run = game:GetService("RunService")
+local plr = game.Players.LocalPlayer
+local mouse = plr:GetMouse()
+
+local Circle = Instance.new("ImageLabel")
+Circle.Name = "Circle"
+Circle.BackgroundColor3 = Color3.new(1, 1, 1)
+Circle.BackgroundTransparency = 1
+Circle.Image = "rbxassetid://266543268"
+Circle.ImageTransparency = 0.5
 	
 function mt:DraggingEnabled(frame, parent)
 	parent = parent or frame
@@ -233,8 +305,6 @@ function mt:Window(hub, the_game_name, main_color)
 	Top_Bar.ZIndex = 2
 	mt:DraggingEnabled(Top_Bar)
 	
-	RainbowText(Top_Bar)
-	
 	local TrueGame = Instance.new("TextLabel")
 	TrueGame.Name = "TrueGame"
 	TrueGame.Parent = Top_Bar
@@ -252,8 +322,9 @@ function mt:Window(hub, the_game_name, main_color)
 	TrueGame.TextStrokeTransparency = 0.100
 	TrueGame.TextWrapped = true
 	TrueGame.TextXAlignment = Enum.TextXAlignment.Left
+	RainbowText(TrueGame)
 	
-	local NewDropShadow = Instance.new("ImageLabel")
+--[[	local NewDropShadow = Instance.new("ImageLabel")
 	NewDropShadow.Name = "DropShadow"
 	NewDropShadow.BackgroundTransparency = 1
 	NewDropShadow.Image = "rbxassetid://"
@@ -262,7 +333,7 @@ function mt:Window(hub, the_game_name, main_color)
 	NewDropShadow.Position = UDim2.new(-0.0343199335, 0, 1.29166663, 0)
 	NewDropShadow.Size = UDim2.new(0, 495, 0, 286)
 	NewDropShadow.Parent = Top_Bar
-	
+]]	
 	BlackBackground.Name = "BlackBackground"
 	BlackBackground.Parent = Top_Bar
 	BlackBackground.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
